@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Tambah Juz dan Nama Al-Quran</title>
+  <!-- Link ke Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center mt-3">KHATAMAN AL-QUR'AN KELUARGA H. ABD. HADI</h1>
+    <h2>Niatkan khataman ini (baca al-fatihah) untuk:</h2>
+    <ol>
+        <li>Nabi Muhammad serta sahabat-sahabatnya.</li>
+        <li>Ibu/Mbah Hj. Husniati</li>
+        <li>Mbah Masruri</li>
+        <li>Mbah Suparkah</li>
+        <li>Mbah Darjo Masilan</li>
+        <li>Mbah Aisyah</li>
+        <li>Mbah Karto Sarpin Sk</li>
+        <li>Mbah Sastro Seno Sk</li>
+        <li>Mbah H Nur Ali</li>
+        <li>Mbah Saerozi Sk</li>
+        <li>Mbah Miun Sk</li>
+        <li>Mbah Saibani Sk</li>
+        <li>Mbah Samsuri Sk</li>
+        <li>Mbah Jono Sk</li>
+        <li>Mbah Midi</li>
+        <li>Mbah Masirah</li>
+        <li>Mbah Yah Sk</li>
+        <li>Mbah Marjan</li>
+        <li>Mbah Suyuti Sk</li>
+        <li>Mbah Kurdi Sk</li>
+        <li>Mbah H Jazeri Arif</li>
+        <li>Lik Suhadak</li>
+        <li>Lik Supriyanto</li>
+    </ol>
+    <h3>Supaya kita semua diberi kemudahan, kelancaran, keberkahan, dan kesuksesan. Serta diberi keselamatan dan dijauhkan dari segala musibah dan marabahaya.</h3>
+    <div class="row my-3">
+      <div class="col-md-6">
+        <form id="juzForm">
+          <div class="form-group">
+            <label for="juz">Juz:</label>
+            <input type="number" class="form-control" id="juz" name="juz" required>
+          </div>
+          <div class="form-group">
+            <label for="nama">Nama:</label>
+            <input type="text" class="form-control" id="nama" name="nama" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Tambahkan Juz dan Nama</button>
+        </form>
+      </div>
+    </div>
+    <h2 class="my-3">Daftar Juz</h2>
+    <div id="dataContainer"></div>
+  </div>
+  
+  <!-- Link ke JavaScript Bootstrap dan script.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
