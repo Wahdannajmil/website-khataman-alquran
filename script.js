@@ -26,24 +26,54 @@ function displayData(data) {
 }
 
 function addJuzAndNamaToAPI(juzData) {
-  fetch('https://6445e9fcee791e1e29f332a7.mockapi.io/api/v1/login-register/user', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(juzData),
-  })
+  // Fetch the data from the API
+  fetch('https://6445e9fcee791e1e29f332a7.mockapi.io/api/v1/login-register/user')
     .then(response => response.json())
     .then(data => {
-      console.log('Juz dan Nama berhasil ditambahkan:', data);
-      alert('Juz dan Nama berhasil ditambahkan!');
-      getData();
+      const isJuzAlreadyExists = data.some(item => item.nama === juzData.nama);
+      if (isJuzAlreadyExists) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Juz sudah diinputkan!',
+          text: 'Nama Juz yang sama sudah ada dalam data.',
+        });
+      } else {
+        // If Juz name is unique, add it to the API
+        fetch('https://6445e9fcee791e1e29f332a7.mockapi.io/api/v1/login-register/user', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(juzData),
+        })
+          .then(response => response.json())
+          .then(data => {
+            console.log('Juz dan Nama berhasil ditambahkan:', data);
+            Swal.fire({
+              icon: 'success',
+              title: 'Data berhasil dikirim!',
+              text: 'Juz dan Nama berhasil ditambahkan!',
+            });
+            getData(); // Optional: Refresh data after adding a new entry
+          })
+          .catch(error => {
+            console.error('Terjadi kesalahan:', error);
+            Swal.fire({
+              icon: 'error',
+              title: 'Terjadi kesalahan!',
+              text: 'Terjadi kesalahan saat menambahkan Juz dan Nama!',
+            });
+          });
+      }
     })
     .catch(error => {
       console.error('Terjadi kesalahan:', error);
-      alert('Terjadi kesalahan saat menambahkan Juz dan Nama!');
+      alert('Terjadi kesalahan saat memeriksa data!');
     });
 }
+
+
+
 
 const juzForm = document.getElementById('juzForm');
 juzForm.addEventListener('submit', (event) => {
