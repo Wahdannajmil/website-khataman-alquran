@@ -7,7 +7,8 @@ body {
 }
 .delete-icon {
       padding-left: 20px;
-      color: rgb(195, 33, 33); /* Adjust the padding as needed */
+      float: right;
+      color: rgb(225, 36, 36); 
     }
 .container {
   padding: 20px;
