@@ -65,8 +65,8 @@ function addJuzAndNamaToAPI(juzData) {
       if (isJuzAlreadyExists) {
         Swal.fire({
           icon: 'error',
-          title: 'Juz sudah diinputkan!',
-          text: 'Nama Juz yang sama sudah ada dalam data.',
+          title: 'Data sudah diinputkan!',
+          text: 'Data yang sama sudah ada',
         });
       } else {
         // If Juz name is unique, add it to the API
