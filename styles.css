@@ -5,7 +5,10 @@ body {
   background-color: #f8f9fa;
   color: #333;
 }
-
+.delete-icon {
+      padding-left: 20px;
+      color: rgb(195, 33, 33); /* Adjust the padding as needed */
+    }
 .container {
   padding: 20px;
 }

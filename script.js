@@ -13,18 +13,49 @@ function getData() {
 }
 
 
+function deleteJuz(juzId) {
+  Swal.fire({
+    icon: 'warning',
+    title: 'Anda yakin ingin menghapus data ini?',
+    showCancelButton: true,
+    confirmButtonText: 'Ya, hapus!',
+    cancelButtonText: 'Tidak',
+  }).then((result) => {
+    if (result.isConfirmed) {
+      fetch(`https://6445e9fcee791e1e29f332a7.mockapi.io/api/v1/login-register/user/${juzId}`, {
+        method: 'DELETE',
+      })
+        .then(() => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Data berhasil dihapus!',
+            text: 'Data juz dan nama berhasil dihapus.',
+          });
+          getData(); // Refresh data after deletion
+        })
+        .catch((error) => {
+          console.error('Terjadi kesalahan:', error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Terjadi kesalahan!',
+            text: 'Terjadi kesalahan saat menghapus data!',
+          });
+        });
+    }
+  });
+}
+
 function displayData(data) {
   const dataContainer = document.getElementById('dataContainer');
   dataContainer.innerHTML = '';
-  data.forEach(item => {
+  data.forEach((item) => {
     const dataItem = document.createElement('div');
     dataItem.innerHTML = `
-      <p>Juz: ${item.juz}, Nama: ${item.nama}</p>
+      <p>Juz: ${item.juz}, Nama: ${item.nama} <i class="fas fa-trash-alt delete-icon" onclick="deleteJuz(${item.id})"></i></p>
       <hr>`;
     dataContainer.appendChild(dataItem);
   });
 }
-
 function addJuzAndNamaToAPI(juzData) {
   // Fetch the data from the API
   fetch('https://6445e9fcee791e1e29f332a7.mockapi.io/api/v1/login-register/user')
