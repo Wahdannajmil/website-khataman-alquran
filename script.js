@@ -44,18 +44,27 @@ function deleteJuz(juzId) {
     }
   });
 }
-
 function displayData(data) {
   const dataContainer = document.getElementById('dataContainer');
   dataContainer.innerHTML = '';
   data.forEach((item) => {
     const dataItem = document.createElement('div');
     dataItem.innerHTML = `
-      <p>Juz: ${item.juz}, Nama: ${item.nama} <i class="fas fa-trash-alt delete-icon" onclick="deleteJuz(${item.id})"></i></p>
+      <p>
+        Juz: ${item.juz}, Nama: ${item.nama}
+        <i class="fas fa-trash-alt delete-icon" onclick="deleteJuz(${item.id})"></i>
+        ${
+          item.isDone
+            ? '<i class="fas fa-check-circle ml-2 text-success"></i>'
+            : `<button class="btn btn-success btn-sm ml-2" onclick="markAsDone(${item.id})">Tombol Selesai</button>`
+        }
+      </p>
       <hr>`;
     dataContainer.appendChild(dataItem);
   });
 }
+
+
 function addJuzAndNamaToAPI(juzData) {
   // Fetch the data from the API
   fetch('https://6445e9fcee791e1e29f332a7.mockapi.io/api/v1/login-register/user')
@@ -105,6 +114,47 @@ function addJuzAndNamaToAPI(juzData) {
 
 // Rest of the code remains the same
 
+function markAsDone(juzId) {
+  // Fetch the data from the API
+  fetch(`https://6445e9fcee791e1e29f332a7.mockapi.io/api/v1/login-register/user/${juzId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      // Update the isDone property to true
+      data.isDone = true;
+      // Send the updated data to the API
+      fetch(`https://6445e9fcee791e1e29f332a7.mockapi.io/api/v1/login-register/user/${juzId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+        .then(() => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Berhasil menandai sudah selesai!',
+            text: 'Juz dan Nama telah ditandai sebagai sudah selesai.',
+          });
+          getData(); // Refresh data after marking as done
+        })
+        .catch((error) => {
+          console.error('Terjadi kesalahan:', error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Terjadi kesalahan!',
+            text: 'Terjadi kesalahan saat menandai sudah selesai!',
+          });
+        });
+    })
+    .catch((error) => {
+      console.error('Terjadi kesalahan:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Terjadi kesalahan!',
+        text: 'Terjadi kesalahan saat mengambil data!',
+      });
+    });
+}
 
 
 const juzForm = document.getElementById('juzForm');

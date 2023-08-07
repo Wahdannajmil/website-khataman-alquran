@@ -78,3 +78,12 @@ form {
     font-size: 18px;
   }
 }
+/* Add custom CSS for the action buttons */
+.btn {
+  display: flex;
+  align-items: center;
+}
+
+.btn .delete-icon {
+  margin-right: 8px; /* Add some spacing between the delete icon and the "Selesai" button */
+}
