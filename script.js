@@ -66,11 +66,23 @@ function displayData(data) {
 
 
 function addJuzAndNamaToAPI(juzData) {
+  const juzInput = parseInt(juzData.juz, 10);
+
+  // Validate the input for Juz
+  if (isNaN(juzInput) || juzInput < 1 || juzInput > 30) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Input Juz Salah!',
+      text: 'Masukkan angka Juz antara 1 dan 30.',
+    });
+    return; // Stop the function if the input is invalid
+  }
+
   // Fetch the data from the API
   fetch('https://6445e9fcee791e1e29f332a7.mockapi.io/api/v1/login-register/user')
     .then(response => response.json())
     .then(data => {
-      const isJuzAlreadyExists = data.some(item => item.juz === juzData.juz);
+      const isJuzAlreadyExists = data.some(item => item.juz === juzInput);
       if (isJuzAlreadyExists) {
         Swal.fire({
           icon: 'error',
@@ -84,7 +96,7 @@ function addJuzAndNamaToAPI(juzData) {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(juzData),
+          body: JSON.stringify({ ...juzData, juz: juzInput }), // Update the juz value to the parsed integer
         })
           .then(response => response.json())
           .then(data => {
