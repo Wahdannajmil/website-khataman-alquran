@@ -87,3 +87,7 @@ form {
 .btn .delete-icon {
   margin-right: 8px; /* Add some spacing between the delete icon and the "Selesai" button */
 }
+
+.keterangan {
+  color: red;
+}

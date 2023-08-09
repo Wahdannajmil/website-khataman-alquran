@@ -44,9 +44,19 @@ function deleteJuz(juzId) {
     }
   });
 }
+
 function displayData(data) {
   const dataContainer = document.getElementById('dataContainer');
+  const juzStatsElement = document.getElementById('juzStats');
   dataContainer.innerHTML = '';
+  
+  // Calculate the number of completed and total juz
+  const completedJuzCount = data.filter(item => item.isDone).length;
+  const totalJuzCount = data.length;
+  
+  // Update the juz stats text
+  juzStatsElement.textContent = `Juz yang sudah selesai: ${completedJuzCount} / Total juz: ${totalJuzCount}`;
+  
   data.forEach((item) => {
     const dataItem = document.createElement('div');
     dataItem.innerHTML = `
@@ -63,6 +73,7 @@ function displayData(data) {
     dataContainer.appendChild(dataItem);
   });
 }
+
 
 
 function addJuzAndNamaToAPI(juzData) {
