@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
 
 </head>
-<body>
+<body bg-dark>
   <div class="container">
     <h1 class="text-center mt-3">KHATAMAN AL-QUR'AN KELUARGA H. ABD. HADI</h1>
     <h2>Niatkan khataman ini (baca al-fatihah) untuk:</h2>
@@ -48,21 +48,31 @@
     <h3>Supaya kita semua diberi kemudahan, kelancaran, keberkahan, dan kesuksesan. Serta diberi keselamatan dan dijauhkan dari segala musibah dan marabahaya.</h3>
     <div class="row my-3">
       <div class="col-md-6">
+        <div class="row my-3">
+  <!-- <div class="col-md-6 mx-auto">
+    <div class="card shadow">
+      <div class="card-body">
         <form id="juzForm">
           <div class="form-group">
             <label for="juz">Juz:</label>
-            <input placeholder="masukkan juz" type="number" class="form-control" id="juz" name="juz" required>
+            <input placeholder="Masukkan juz" type="number" class="form-control" id="juz" name="juz" required>
           </div>
           <div class="form-group">
             <label for="nama">Nama:</label>
-            <input placeholder="masukkan nama" type="text" class="form-control" id="nama" name="nama" required>
+            <input placeholder="Masukkan nama" type="text" class="form-control" id="nama" name="nama" required>
           </div>
-          <button type="submit" class="btn btn-primary">Tambahkan Juz dan Nama</button>
+          <button type="submit" class="btn btn-primary btn-block">Tambahkan Juz dan Nama</button>
         </form>
       </div>
     </div>
-        <p id="juzStats" class="keterangan mb-3">Juz yang sudah selesai: 0 / Total juz: 0</p>
+  </div> -->
+</div>
 
+      </div>
+    </div>
+        <p id="juzStats" class="keterangan mb-3">Juz yang sudah selesai: 0 / Total juz: 0</p>
+<!-- <button class="btn btn-warning btn-sm ml-2" onclick="cancelAllDoneStatus()">Batalkan Semua Selesai</button>
+ -->
     <h2 class="my-3">Daftar Juz</h2>
     <div id="dataContainer"></div>
   </div>
