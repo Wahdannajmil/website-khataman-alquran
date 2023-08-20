@@ -1,9 +1,16 @@
 /* styles.css */
+*{
+color: #503d39;
+font-family: 'Poppins', sans-serif;
+}
 
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
+      font-family: 'Poppins', sans-serif;
+      background-color: #57d0af;
+    }
+
+.card {
+  border-radius: 10px;
 }
 .delete-icon {
       padding-left: 20px;
@@ -12,16 +19,17 @@ body {
     }
 .container {
   padding: 20px;
+  background-color: #faeadb;
 }
 
 h1 {
-  color: #007bff;
+  color: #503d39;
   font-size: 32px;
   font-weight: bold;
 }
 
 h2 {
-  color: #007bff;
+  color: #503d39;
   font-size: 24px;
   font-weight: bold;
   margin-top: 30px;
@@ -37,33 +45,16 @@ form {
   margin-top: 20px;
 }
 
-.form-group label {
-  font-weight: bold;
-}
 
-.btn-primary {
-  background-color: #007bff;
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: #0056b3;
-}
-
-#dataContainer {
-  margin-top: 20px;
-}
 
 #dataContainer p {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 5px;
+  margin: 10px;
+  margin-top: 20px;
+
 }
 
-#dataContainer hr {
-  margin: 10px 0;
-  border: 0;
-  border-top: 1px solid #007bff;
-}
 
 @media (max-width: 576px) {
   h1 {
@@ -79,15 +70,41 @@ form {
   }
 }
 /* Add custom CSS for the action buttons */
+.btn-form {
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #57d0af;
+  color: white;
+}
 .btn {
   display: flex;
   align-items: center;
+  border-radius: 20px;
+  background-color: #57d0af;
+  color: white;
 }
 
 .btn .delete-icon {
-  margin-right: 8px; /* Add some spacing between the delete icon and the "Selesai" button */
+  margin-right: 8px;
+   /* Add some spacing between the delete icon and the "Selesai" button */
 }
 
 .keterangan {
   color: red;
+}
+
+/* Styling for the checkmark */
+.checkmark {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 10px;
 }

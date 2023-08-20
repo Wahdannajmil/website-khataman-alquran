@@ -69,12 +69,11 @@ function displayData(data) {
 
     dataItem.innerHTML = `
       <p>
-        Juz: ${item.juz}, Nama: ${prevItem.nama}
-        <i class="fas fa-trash-alt delete-icon" onclick="deleteJuz(${item.id})"></i>
+        Juz: ${item.juz}  ,    ${prevItem.nama}
         ${
           item.isDone
-            ? '<i class="fas fa-check-circle ml-2 text-success"></i>'
-            : `<button class="btn btn-success btn-sm ml-2" onclick="markAsDone(${item.id})">Tombol Selesai</button>`
+            ? '<i class="fas fa-check-circle ml-2"></i>'
+            : `<button class="btn btn-sm ml-2" onclick="markAsDone(${item.id})">Tombol Selesai</button>`
         }
       </p>
       <hr>`;
@@ -85,12 +84,12 @@ function displayData(data) {
     const dataItem = document.createElement('div');
     dataItem.innerHTML = `
       <p>
-        Juz: ${juz30Data.juz}, Nama: ${juz30Data.nama}
-        <i class="fas fa-trash-alt delete-icon" onclick="deleteJuz(${juz30Data.id})"></i>
+        Juz: ${juz30Data.juz},  ${juz30Data.nama}
+        
         ${
           juz30Data.isDone
-            ? '<i class="fas fa-check-circle ml-2 text-success"></i>'
-            : `<button class="btn btn-success btn-sm ml-2" onclick="markAsDone(${juz30Data.id})">Tombol Selesai</button>`
+            ? '<i class="fas fa-check-circle ml-2"></i>'
+            : `<button class="btn btn-sm ml-2" onclick="markAsDone(${juz30Data.id})">Tombol Selesai</button>`
         }
       </p>
       <hr>`;
@@ -99,7 +98,7 @@ function displayData(data) {
 }
 
 
-
+//button hapus         <i class="fas fa-trash-alt delete-icon" onclick="deleteJuz(${item.id})"></i>
 
 // ... Kode selanjutnya ...
 
