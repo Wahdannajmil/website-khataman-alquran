@@ -47,56 +47,136 @@ function deleteJuz(juzId) {
 
 // ... Kode lainnya ...
 
+// function displayData(data) {
+//   const dataContainer = document.getElementById('dataContainer');
+//   const juzStatsElement = document.getElementById('juzStats');
+//   dataContainer.innerHTML = '';
+
+//   // Calculate the number of completed and total juz
+//   const completedJuzCount = data.filter(item => item.isDone).length;
+//   const totalJuzCount = data.length;
+
+//   // Update the juz stats text
+//   juzStatsElement.textContent = `Juz yang sudah selesai: ${completedJuzCount} / Total juz: ${totalJuzCount}`;
+
+//   const rotatingData = data.filter(item => item.juz >= 1 && item.juz <= 29);
+//   const juz30Data = data.find(item => item.juz === 30);
+
+//   rotatingData.forEach((item, index) => {
+//     const dataItem = document.createElement('div');
+//     const prevIndex = (index - 1 + rotatingData.length) % rotatingData.length;
+//     const prevItem = rotatingData[prevIndex];
+
+//     dataItem.innerHTML = `
+//     <div class="card-icon">
+//       <p>
+//         <span class="checkbox" onclick="toggleDone(${item.id})">
+//           ${item.isDone ? '<i class="fas  fa-check-circle"></i>' : '<i class="far fa-circle"></i>'}
+//         </span>
+//         Juz: ${item.juz}  ,    ${prevItem.nama}
+//       </p>
+//     </div>`;
+
+//     dataContainer.appendChild(dataItem);
+//   });
+
+//   if (juz30Data) {
+//     const dataItem = document.createElement('div');
+//     dataItem.innerHTML = `
+//     <div class="card-icon">
+//       <p>
+//         <span class="checkbox" onclick="toggleDone(${juz30Data.id})">
+//           ${juz30Data.isDone ? '<i class="fas  fa-check-circle"></i>' : '<i class="far fa-circle"></i>'}
+//         </span>
+//         Juz: ${juz30Data.juz} ,  ${juz30Data.nama}
+        
+//       </p>
+//     </div>
+//     <hr>`;
+
+//     dataContainer.appendChild(dataItem);
+//   }
+// }
 function displayData(data) {
   const dataContainer = document.getElementById('dataContainer');
   const juzStatsElement = document.getElementById('juzStats');
   dataContainer.innerHTML = '';
-
+  
   // Calculate the number of completed and total juz
   const completedJuzCount = data.filter(item => item.isDone).length;
   const totalJuzCount = data.length;
-
+  
   // Update the juz stats text
   juzStatsElement.textContent = `Juz yang sudah selesai: ${completedJuzCount} / Total juz: ${totalJuzCount}`;
-
-  const rotatingData = data.filter(item => item.juz >= 1 && item.juz <= 29);
-  const juz30Data = data.find(item => item.juz === 30);
-
-  rotatingData.forEach((item, index) => {
+  
+  data.forEach((item) => {
     const dataItem = document.createElement('div');
-    const prevIndex = (index - 1 + rotatingData.length) % rotatingData.length;
-    const prevItem = rotatingData[prevIndex];
-
     dataItem.innerHTML = `
-      <p>
-        Juz: ${item.juz}  ,    ${prevItem.nama}
-        ${
-          item.isDone
-            ? '<i class="fas fa-check-circle ml-2"></i>'
-            : `<button class="btn btn-sm ml-2" onclick="markAsDone(${item.id})">Tombol Selesai</button>`
-        }
+    <div class="d-flex justify-content-between card-icon">
+      <p class="align-self-center">
+        Juz: ${item.juz}, Nama: ${item.nama}
       </p>
-      <hr>`;
+      <span class="checkbox align-self-center" onclick="toggleDone(${item.id})">
+        ${item.isDone ? '<i class="fas fa-check-square"></i>' : '<i class="far fa-square"></i>'}
+      </span>
+    </div>`;
     dataContainer.appendChild(dataItem);
   });
+}
+//     dataItem.innerHTML = `
+//     <div class="card-icon">
+//       <p>
+//         <span class="checkbox" onclick="toggleDone(${item.id})">
+//           ${item.isDone ? '<i class="fas  fa-check-circle"></i>' : '<i class="far fa-circle"></i>'}
+//         </span>
+//         Juz: ${item.juz}  ,    ${prevItem.nama}
+//       </p>
+//     </div>`;
+// ... Kode lainnya ...
 
-  if (juz30Data) {
-    const dataItem = document.createElement('div');
-    dataItem.innerHTML = `
-      <p>
-        Juz: ${juz30Data.juz},  ${juz30Data.nama}
-        
-        ${
-          juz30Data.isDone
-            ? '<i class="fas fa-check-circle ml-2"></i>'
-            : `<button class="btn btn-sm ml-2" onclick="markAsDone(${juz30Data.id})">Tombol Selesai</button>`
-        }
-      </p>
-      <hr>`;
-    dataContainer.appendChild(dataItem);
-  }
+function toggleDone(juzId) {
+  // Fetch the data from the API
+  fetch(`https://6445e9fcee791e1e29f332a7.mockapi.io/api/v1/login-register/user/${juzId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      // Toggle the isDone property
+      data.isDone = !data.isDone;
+      // Send the updated data to the API
+      fetch(`https://6445e9fcee791e1e29f332a7.mockapi.io/api/v1/login-register/user/${juzId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+        .then(() => {
+          Swal.fire({
+            icon: 'success',
+            title: 'Berhasil mengubah status!',
+            text: data.isDone ? 'Juz dan Nama telah selesai.' : 'Juz dan Nama belum selesai.',
+          });
+          getData(); // Refresh data after changing status
+        })
+        .catch((error) => {
+          console.error('Terjadi kesalahan:', error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Terjadi kesalahan!',
+            text: 'Terjadi kesalahan saat mengubah status!',
+          });
+        });
+    })
+    .catch((error) => {
+      console.error('Terjadi kesalahan:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Terjadi kesalahan!',
+        text: 'Terjadi kesalahan saat mengambil data!',
+      });
+    });
 }
 
+// ... Kode lainnya ...
 
 //button hapus         <i class="fas fa-trash-alt delete-icon" onclick="deleteJuz(${item.id})"></i>
 

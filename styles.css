@@ -70,18 +70,12 @@ form {
   }
 }
 /* Add custom CSS for the action buttons */
-.btn-form {
-  display: flex;
-  align-items: center;
-  border-radius: 5px;
-  background-color: #57d0af;
-  color: white;
-}
+
 .btn {
   display: flex;
   align-items: center;
   border-radius: 20px;
-  background-color: #57d0af;
+  background-color: #ef5f6c;;
   color: white;
 }
 
@@ -107,4 +101,95 @@ form {
   justify-content: center;
   cursor: pointer;
   margin-left: 10px;
+}
+.card-icon {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card p {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.checkbox {
+  margin-right: 12px;
+  cursor: pointer;
+  color: #503d39;
+  font-size: 20px;
+}
+
+.checkbox i {
+  transition: color 0.2s ease-in-out;
+  color: #503d39;
+  font-size: 25px;
+}
+
+.checkbox:hover i {
+  border-radius: 50%;
+  /* color: #57d0af; */
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 12px;
+}
+.card {
+  background-color: #f8f9fa;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Sesuaikan lebar kartu */
+  margin: 0 auto; /* Tengahkan kartu di layar */
+}
+
+.card-body {
+  padding: 0; /* Hilangkan padding bawaan dari Bootstrap */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #333;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #57d0af; /* Warna border saat fokus */
+}
+
+.btn-form {
+  background-color: #ef5f6c;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-form:hover {
+  background-color: #469d8b; /* Warna tombol saat dihover */
 }
