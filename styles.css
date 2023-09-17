@@ -1,12 +1,12 @@
 /* styles.css */
 *{
-color: #503d39;
+color: #023047;
 font-family: 'Poppins', sans-serif;
 }
 
 body {
       font-family: 'Poppins', sans-serif;
-      background-color: #57d0af;
+      background-color: #70c37b;
     }
 
 .card {
@@ -19,17 +19,17 @@ body {
     }
 .container {
   padding: 20px;
-  background-color: #faeadb;
+  background-color: #cbf3f0;
 }
 
 h1 {
-  color: #503d39;
+  color: #023047;
   font-size: 32px;
   font-weight: bold;
 }
 
 h2 {
-  color: #503d39;
+  color: #023047;
   font-size: 24px;
   font-weight: bold;
   margin-top: 30px;
@@ -105,10 +105,10 @@ form {
 .card-icon {
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 4px;
-  margin-bottom: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 8px;
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .card p {
@@ -119,16 +119,17 @@ form {
 }
 
 .checkbox {
-  margin-right: 12px;
+  margin: auto;
   cursor: pointer;
-  color: #503d39;
+  color: #ef5f6c;
   font-size: 20px;
+  margin-right: 15px;
 }
 
 .checkbox i {
   transition: color 0.2s ease-in-out;
-  color: #503d39;
-  font-size: 25px;
+  color: #ef5f6c;
+  font-size: 26px;
 }
 
 .checkbox:hover i {
@@ -142,7 +143,7 @@ hr {
   margin-top: 12px;
 }
 .card {
-  background-color: #f8f9fa;
+  background-color: #fff;
   border: none;
   border-radius: 10px;
   padding: 20px;
@@ -193,3 +194,36 @@ hr {
 .btn-form:hover {
   background-color: #469d8b; /* Warna tombol saat dihover */
 }
+
+/* style carousel */
+
+/* CSS */
+#imageCarousel {
+  max-width: 600px; /* Atur lebar maksimum sesuai keinginan Anda */
+  margin: 0 auto; /* Menempatkan carousel di tengah halaman */
+}
+
+.carousel-inner {
+  max-height: auto; /* Atur tinggi maksimum sesuai keinginan Anda */
+}
+
+.carousel-item img {
+  max-width: 100%; /* Gambar akan menyesuaikan lebar carousel */
+  height: auto; /* Gambar akan menyesuaikan tinggi carousel */
+  border-radius: 10px;
+}
+    .carousel-container {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      flex-shrink: 0;
+      transition: transform 0.5s ease-in-out;
+    }

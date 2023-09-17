@@ -9,10 +9,9 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <!-- Add SweetAlert CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.css">
 </head>
-<body bg-dark>
+<body class="bg-dark">
   <div class="container">
     <h1 class="text-center mt-3">KHATAMAN AL-QUR'AN KELUARGA H. ABD. HADI</h1>
     <h2>Niatkan khataman ini (baca al-fatihah) untuk:</h2>
@@ -46,35 +45,73 @@
         <li>Siti Fatimah</li>
     </ol>
     <h3>Supaya kita semua diberi kemudahan, kelancaran, keberkahan, dan kesuksesan. Serta diberi keselamatan dan dijauhkan dari segala musibah dan marabahaya.</h3>
+    
+    <!-- Form Tambah Juz -->
     <div class="row my-3">
-      <div class="col-md-6">
-        <div class="row my-3">
-        <div class="col-md-6 mx-auto">
-          <div class="card">
-            <div class="card-body">
-              <form id="juzForm">
-                <div class="form-group">
-                  <label for="juz">Juz:</label>
-                  <input placeholder="Masukkan juz" type="number" class="form-control" id="juz" name="juz" required>
-                </div>
-                <div class="form-group">
-                  <label for="nama">Nama:</label>
-                  <input placeholder="Masukkan nama" type="text" class="form-control" id="nama" name="nama" required>
-                </div>
-                <button type="submit" class="btn-form">Tambah</button>
-              </form>
-            </div>
-</div>
-
+      <div class="col-md-6 mx-auto">
+        <div class="card">
+          <div class="card-body">
+            <form id="juzForm">
+              <div class="form-group">
+                <label for="juz">Juz:</label>
+                <input placeholder="Masukkan juz" type="number" class="form-control" id="juz" name="juz" required>
+              </div>
+              <div class="form-group">
+                <label for="nama">Nama:</label>
+                <input placeholder="Masukkan nama" type="text" class="form-control" id="nama" name="nama" required>
+              </div>
+              <button type="submit" class="btn-form">Tambah</button>
+            </form>
+          </div>
         </div>
       </div>
+    </div>
+    
+    <!-- Carousel Tailwind -->
+<!-- ... Kode HTML sebelumnya ... -->
 
+<div class="mt-6">
+  <div class="card shadow-lg mx-auto w-3/4 rounded-lg overflow-hidden">
+    <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Tombol Previous -->
+      <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+
+      <!-- Tombol Next -->
+      <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+
+      <!-- Slides -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="/assets/img/foto2.jpg" alt="Gambar 1" class="w-full h-60 object-cover">
+        </div>
+        <div class="carousel-item">
+          <img src="/assets/img/foto3.jpg" alt="Gambar 2" class="w-full h-60 object-cover">
+        </div>
+        <div class="carousel-item">
+          <img src="/assets/img/foto4.jpg" alt="Gambar 3" class="w-full h-60 object-cover">
+        </div>
+        <!-- Tambahkan lebih banyak slide jika diperlukan -->
       </div>
     </div>
-        <p id="juzStats" class="keterangan mb-3">Juz yang sudah selesai: 0 / Total juz: 0</p>
-<!-- <button class="btn btn-warning btn-sm ml-2" onclick="cancelAllDoneStatus()">Batalkan Semua Selesai</button> -->
+  </div>
+</div>
 
+
+<!-- ... Kode HTML sebelumnya ... -->
+
+
+
+    
+    
+    
     <h2 class="my-3 text-center">Daftar Juz dan Nama</h2>
+    <p id="juzStats" class="keterangan mb-3">Juz yang sudah selesai: 0</p>
     <div id="dataContainer"></div>
   </div>
   
@@ -82,9 +119,9 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
   <!-- Add SweetAlert2 library -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

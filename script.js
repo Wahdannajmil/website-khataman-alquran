@@ -101,28 +101,45 @@ function displayData(data) {
   const dataContainer = document.getElementById('dataContainer');
   const juzStatsElement = document.getElementById('juzStats');
   dataContainer.innerHTML = '';
-  
+
   // Calculate the number of completed and total juz
-  const completedJuzCount = data.filter(item => item.isDone).length;
-  const totalJuzCount = data.length;
-  
-  // Update the juz stats text
-  juzStatsElement.textContent = `Juz yang sudah selesai: ${completedJuzCount} / Total juz: ${totalJuzCount}`;
-  
+  const completedJuzCount = data.filter((item) => item.isDone).length;
+
+  // Update the juz stats text with a better format
+  juzStatsElement.innerHTML = `
+    <div class="juz-stats">
+      <p class="completed-juz">Juz yang sudah selesai: <span>${completedJuzCount}</span></p>
+    </div>
+  `;
+
+  // Create a function to generate the HTML for each data item
+  function createDataItemHTML(item) {
+    return `
+      <div class="d-flex justify-content-between card-icon align-items-center">
+        <div>
+          <p>
+            Juz: ${item.juz}, ${item.nama}
+          </p>
+        </div>
+        <div>
+          <span class="checkbox" onclick="toggleDone(${item.id})">
+            ${item.isDone ? '<i class="fas fa-check-circle"></i>' : '<i class="far fa-circle"></i>'}
+          </span>
+        </div>
+      </div>
+    `;
+
+  }
+
+  // Create and append HTML for each data item
   data.forEach((item) => {
     const dataItem = document.createElement('div');
-    dataItem.innerHTML = `
-    <div class="d-flex justify-content-between card-icon">
-      <p class="align-self-center">
-        Juz: ${item.juz}, Nama: ${item.nama}
-      </p>
-      <span class="checkbox align-self-center" onclick="toggleDone(${item.id})">
-        ${item.isDone ? '<i class="fas fa-check-square"></i>' : '<i class="far fa-square"></i>'}
-      </span>
-    </div>`;
+    dataItem.innerHTML = createDataItemHTML(item);
     dataContainer.appendChild(dataItem);
   });
 }
+
+
 //     dataItem.innerHTML = `
 //     <div class="card-icon">
 //       <p>
@@ -355,3 +372,9 @@ juzForm.addEventListener('submit', (event) => {
 
 // Panggil fungsi getData() saat halaman pertama kali dimuat untuk menampilkan data dari API
 getData();
+
+  $(document).ready(function() {
+    $('#imageCarousel').carousel({
+      interval: 3500 // Waktu dalam milidetik (2 detik)
+    });
+  });
