@@ -108,7 +108,7 @@ function displayData(data) {
   // Update the juz stats text with a better format
   juzStatsElement.innerHTML = `
     <div class="juz-stats">
-      <p class="completed-juz">Juz yang sudah selesai: <span>${completedJuzCount}</span></p>
+      <p class="completed-juz">Juz sudah dibaca : <span>${completedJuzCount}</span></p>
     </div>
   `;
 

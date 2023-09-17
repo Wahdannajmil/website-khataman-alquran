@@ -1,6 +1,6 @@
 /* styles.css */
 *{
-color: #023047;
+color: #000000;
 font-family: 'Poppins', sans-serif;
 }
 
@@ -10,7 +10,7 @@ body {
     }
 
 .card {
-  border-radius: 10px;
+  border-radius: 20px;
 }
 .delete-icon {
       padding-left: 20px;
@@ -19,17 +19,17 @@ body {
     }
 .container {
   padding: 20px;
-  background-color: #cbf3f0;
+  background-color: #eae0d5;
 }
 
 h1 {
-  color: #023047;
+  color: #000000;
   font-size: 32px;
   font-weight: bold;
 }
 
 h2 {
-  color: #023047;
+  color: #000000;
   font-size: 24px;
   font-weight: bold;
   margin-top: 30px;
