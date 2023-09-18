@@ -114,22 +114,25 @@ function displayData(data) {
 
   // Create a function to generate the HTML for each data item
   function createDataItemHTML(item) {
+    const checkboxIcon = item.isDone ? '<i class="fas fa-check-circle checked"></i>' : '<i class=" fa-circle unchecked"></i>';
+    const juzNamaStyle = item.isDone ? 'text-decoration: line-through; opacity: 0.5;' : '';
+
     return `
       <div class="d-flex justify-content-between card-icon align-items-center">
         <div>
-          <p>
+          <p style="${juzNamaStyle}">
             Juz: ${item.juz}, ${item.nama}
           </p>
         </div>
         <div>
           <span class="checkbox" onclick="toggleDone(${item.id})">
-            ${item.isDone ? '<i class="fas fa-check-circle"></i>' : '<i class="far fa-circle"></i>'}
+            ${checkboxIcon}
           </span>
         </div>
       </div>
     `;
-
   }
+
 
   // Create and append HTML for each data item
   data.forEach((item) => {

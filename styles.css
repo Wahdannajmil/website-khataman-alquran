@@ -227,3 +227,31 @@ hr {
       flex-shrink: 0;
       transition: transform 0.5s ease-in-out;
     }
+
+
+
+
+    /* list */
+
+/* Styling untuk checkbox */
+.checkbox {
+  cursor: pointer;
+  font-size: 24px; /* Ukuran ikon */
+  transition: color 0.3s ease, transform 0.2s ease; /* Efek transisi warna dan transformasi saat dihover */
+}
+
+/* Styling untuk ikon ceklis saat dicentang */
+.checked {
+  color: green; /* Warna saat dicentang */
+  transform: scale(1.1); /* Efek membesar saat dicentang */
+}
+
+/* Styling untuk ikon lingkaran kosong saat belum dicentang */
+.unchecked {
+  color: grey; /* Warna saat belum dicentang */
+}
+
+/* Efek hover untuk ikon */
+.checkbox:hover {
+  transform: scale(1.1); /* Efek membesar saat dihover */
+}
