@@ -114,7 +114,7 @@ function displayData(data) {
 
   // Create a function to generate the HTML for each data item
   function createDataItemHTML(item) {
-    const checkboxIcon = item.isDone ? '<i class="fas fa-check-circle checked"></i>' : '<i class=" fa-circle unchecked"></i>';
+const checkboxIcon = item.isDone ? '<i class="fas fa-heart checked"></i>' : '<i class="far fa-heart unchecked"></i>';
     const juzNamaStyle = item.isDone ? 'text-decoration: line-through; opacity: 0.5;' : '';
 
     return `
