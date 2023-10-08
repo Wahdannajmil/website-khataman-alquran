@@ -1,22 +1,22 @@
 /* styles.css */
-*{
-color: #000000;
-font-family: 'Poppins', sans-serif;
+* {
+  color: #000000;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #70c37b;
-    }
+  font-family: "Poppins", sans-serif;
+  background-color: #70c37b;
+}
 
 .card {
   border-radius: 20px;
 }
 .delete-icon {
-      padding-left: 20px;
-      float: right;
-      color: rgb(225, 36, 36); 
-    }
+  padding-left: 20px;
+  float: right;
+  color: rgb(225, 36, 36);
+}
 .container {
   padding: 20px;
   background-color: #eae0d5;
@@ -24,10 +24,12 @@ body {
 
 h1 {
   color: #000000;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
 }
-
+ol {
+  font-size: 20px;
+}
 h2 {
   color: #000000;
   font-size: 24px;
@@ -45,16 +47,12 @@ form {
   margin-top: 20px;
 }
 
-
-
 #dataContainer p {
   font-size: 20px;
   margin-bottom: 5px;
   margin: 10px;
   margin-top: 20px;
-
 }
-
 
 @media (max-width: 576px) {
   h1 {
@@ -75,13 +73,13 @@ form {
   display: flex;
   align-items: center;
   border-radius: 20px;
-  background-color: #ef5f6c;;
+  background-color: #ef5f6c;
   color: white;
 }
 
 .btn .delete-icon {
   margin-right: 8px;
-   /* Add some spacing between the delete icon and the "Selesai" button */
+  /* Add some spacing between the delete icon and the "Selesai" button */
 }
 
 .keterangan {
@@ -212,32 +210,31 @@ hr {
   height: auto; /* Gambar akan menyesuaikan tinggi carousel */
   border-radius: 10px;
 }
-    .carousel-container {
-      overflow: hidden;
-      position: relative;
-    }
+.carousel-container {
+  overflow: hidden;
+  position: relative;
+}
 
-    .carousel-wrapper {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
 
-    .carousel-item {
-      min-width: 100%;
-      flex-shrink: 0;
-      transition: transform 0.5s ease-in-out;
-    }
+.carousel-item {
+  min-width: 100%;
+  flex-shrink: 0;
+  transition: transform 0.5s ease-in-out;
+}
 
-
-
-
-    /* list */
+/* list */
 
 /* Styling untuk checkbox */
 .checkbox {
   cursor: pointer;
   font-size: 24px; /* Ukuran ikon */
-  transition: color 0.3s ease, transform 0.2s ease; /* Efek transisi warna dan transformasi saat dihover */
+  transition:
+    color 0.3s ease,
+    transform 0.2s ease; /* Efek transisi warna dan transformasi saat dihover */
 }
 
 /* Styling untuk ikon ceklis saat dicentang */
