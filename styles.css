@@ -1,6 +1,5 @@
-/* styles.css */
 * {
-  color: #000000;
+  color: #ffffff;
   font-family: "Poppins", sans-serif;
 }
 
@@ -23,7 +22,7 @@ body {
 }
 
 h1 {
-  color: #000000;
+  color: #ffffff;
   font-size: 36px;
   font-weight: bold;
 }
@@ -31,7 +30,7 @@ ol {
   font-size: 20px;
 }
 h2 {
-  color: #000000;
+  color: #ffffff;
   font-size: 24px;
   font-weight: bold;
   margin-top: 30px;

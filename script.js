@@ -129,7 +129,7 @@ function displayData(data) {
       <div class="d-flex justify-content-between card-icon align-items-center">
         <div>
           <p style="${juzNamaStyle}">
-            Juz: ${item.juz}, ${item.nama}
+            Juz ${item.juz},  ${item.nama}
           </p>
         </div>
         <div>
@@ -405,3 +405,9 @@ $(document).ready(function () {
     interval: 3500, // Waktu dalam milidetik (2 detik)
   });
 });
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.querySelector('.lg:hidden');
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
