@@ -1,5 +1,5 @@
 * {
-  color: #ffffff;
+  /* color: #ffffff; */
   font-family: "Poppins", sans-serif;
 }
 
@@ -250,4 +250,11 @@ hr {
 /* Efek hover untuk ikon */
 .checkbox:hover {
   transform: scale(1.1); /* Efek membesar saat dihover */
+}
+
+.container ol {
+  color: #fff;
+}
+.container h3 {
+  color: #fff;
 }

@@ -110,11 +110,12 @@ function displayData(data) {
   const completedJuzCount = data.filter((item) => item.isDone).length;
 
   // Update the juz stats text with a better format
-  juzStatsElement.innerHTML = `
-    <div class="juz-stats">
-      <p class="completed-juz">Juz sudah dibaca : <span>${completedJuzCount}</span></p>
-    </div>
-  `;
+juzStatsElement.innerHTML = `
+  <div class="juz-stats">
+    <p class="completed-juz" style="color: white;">Juz sudah dibaca : <span>${completedJuzCount}</span></p>
+  </div>
+`;
+
 
   // Create a function to generate the HTML for each data item
   function createDataItemHTML(item) {
