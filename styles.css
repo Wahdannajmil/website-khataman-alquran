@@ -5,7 +5,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #70c37b;
+  background-color: #14213d;
 }
 
 .card {
@@ -18,7 +18,7 @@ body {
 }
 .container {
   padding: 20px;
-  background-color: #eae0d5;
+  background-color: #14213d;
 }
 
 h1 {
@@ -29,11 +29,11 @@ h1 {
 ol {
   font-size: 20px;
 }
-h2 {
+.header2 {
   color: #ffffff;
   font-size: 24px;
   font-weight: bold;
-  margin-top: 30px;
+  padding-top: 70px;
 }
 
 h3 {
@@ -41,6 +41,16 @@ h3 {
   font-weight: bold;
   margin-top: 20px;
 }
+/* Tambahkan CSS ini ke dalam file styles.css Anda */
+.header {
+  position: sticky;
+  top: 0;
+  color: black;
+  padding: 17px;
+  background-color: #faf0ca;
+  z-index: 100; /* Untuk memastikan elemen tetap di atas elemen-elemen lain */
+}
+
 
 form {
   margin-top: 20px;
@@ -257,4 +267,44 @@ hr {
 }
 .container h3 {
   color: #fff;
+}
+
+.data-item {
+  background: rgba(255, 255, 255, 0.7); /* Atur warna latar belakang dengan opacity */
+  border-radius: 5px;
+  backdrop-filter: blur(5px); /* Efek blur latar belakang */
+  padding: 10px;
+}
+
+/* Untuk mengubah warna latar belakang saat dihover */
+.data-item:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.glassmorphism-container {
+  background: url('background-image.jpg') center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.glassmorphism-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+}
+
+.glassmorphism-content {
+  color: #fff; /* Warna teks yang sesuai */
+}
+
+.checkbox {
+  cursor: pointer;
 }

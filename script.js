@@ -118,29 +118,42 @@ juzStatsElement.innerHTML = `
 
 
   // Create a function to generate the HTML for each data item
-  function createDataItemHTML(item) {
-    const checkboxIcon = item.isDone
-      ? '<i class="fas fa-heart checked"></i>'
-      : '<i class="far fa-heart unchecked"></i>';
-    const juzNamaStyle = item.isDone
-      ? "text-decoration: line-through; opacity: 0.5;"
-      : "";
+function createDataItemHTML(item) {
+  const checkboxIcon = item.isDone
+    ? '<i class="fas fa-heart checked"></i>'
+    : '<i class="far fa-heart unchecked"></i>';
+  const juzNamaStyle = item.isDone
+    ? "text-decoration: line-through; opacity: 0.5;"
+    : "";
 
-    return `
-      <div class="d-flex justify-content-between card-icon align-items-center">
-        <div>
-          <p style="${juzNamaStyle}">
-            Juz ${item.juz},  ${item.nama}
-          </p>
-        </div>
-        <div>
-          <span class="checkbox" onclick="toggleDone(${item.id})">
-            ${checkboxIcon}
-          </span>
-        </div>
+  return `
+    <div class="d-flex justify-content-between card-icon align-items-center" style="background: rgba(255, 255, 255, 0.2); border-radius: 5px; padding: 8px; backdrop-filter: blur(10px); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+      <div>
+        <p class ="text-white" style="${juzNamaStyle}">
+          Juz ${item.juz}, ${item.nama}
+        </p>
       </div>
-    `;
-  }
+      <div>
+        <span class="checkbox" onclick="toggleDone(${item.id})">
+          ${checkboxIcon}
+        </span>
+      </div>
+    </div>
+  `;
+}
+
+//   <div class="d-flex justify-content-between card-icon align-items-center" style="background: rgba(255, 255, 255, 0.2); border-radius: 5px; padding: 10px; backdrop-filter: blur(10px); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+//   <div>
+//     <p class="text-white" style="${juzNamaStyle}">
+//       Juz ${item.juz} , ${item.nama}
+//     </p>
+//   </div>
+//   <div>
+//     <span class="checkbox" onclick="toggleDone(${item.id})">
+//       ${checkboxIcon}
+//     </span>
+//   </div>
+// </div>
 
   // Create and append HTML for each data item
   data.forEach((item) => {
@@ -412,3 +425,16 @@ $(document).ready(function () {
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
+
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
