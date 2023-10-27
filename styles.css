@@ -43,11 +43,14 @@ h3 {
 }
 /* Tambahkan CSS ini ke dalam file styles.css Anda */
 .header {
-  /* position: sticky; */
+  position: sticky;
   top: 0;
   color: black;
-  padding: 17px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: auto;
   background-color: #faf0ca;
+  /* border-radius: 20px; */
   z-index: 100; /* Untuk memastikan elemen tetap di atas elemen-elemen lain */
 }
 
@@ -110,7 +113,7 @@ form {
   margin-left: 10px;
 }
 .card-icon {
-  background-color: #ffffff;
+  background-color: #104966;
   border: 1px solid #e0e0e0;
   border-radius: 20px;
   padding: 4px;
@@ -268,6 +271,7 @@ hr {
 .container h3 {
   color: #fff;
 }
+
 
 .checkbox {
   cursor: pointer;

@@ -127,7 +127,7 @@ function createDataItemHTML(item) {
     : "";
 
   return `
-    <div class="d-flex justify-content-between card-icon align-items-center" style="background: rgba(255, 255, 255, 0.2); border-radius: 5px; padding: 8px; backdrop-filter: blur(10px); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <div class="d-flex justify-content-between card-icon align-items-center">
       <div>
         <p class ="text-white" style="${juzNamaStyle}">
           Juz ${item.juz}, ${item.nama}
