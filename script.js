@@ -425,3 +425,5 @@ $(document).ready(function () {
     mobileMenuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
+
+
