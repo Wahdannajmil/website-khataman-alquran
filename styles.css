@@ -43,7 +43,7 @@ h3 {
 }
 /* Tambahkan CSS ini ke dalam file styles.css Anda */
 .header {
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   color: black;
   padding: 17px;
@@ -267,42 +267,6 @@ hr {
 }
 .container h3 {
   color: #fff;
-}
-
-.data-item {
-  background: rgba(255, 255, 255, 0.7); /* Atur warna latar belakang dengan opacity */
-  border-radius: 5px;
-  backdrop-filter: blur(5px); /* Efek blur latar belakang */
-  padding: 10px;
-}
-
-/* Untuk mengubah warna latar belakang saat dihover */
-.data-item:hover {
-  background: rgba(255, 255, 255, 0.9);
-}
-
-.glassmorphism-container {
-  background: url('background-image.jpg') center/cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.glassmorphism-card {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 300px;
-}
-
-.glassmorphism-content {
-  color: #fff; /* Warna teks yang sesuai */
 }
 
 .checkbox {
