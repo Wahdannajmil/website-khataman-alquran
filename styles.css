@@ -45,10 +45,8 @@ h3 {
 .header {
   position: sticky;
   top: 0;
+  font-size: medium;
   color: black;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin: auto;
   background-color: #faf0ca;
   /* border-radius: 20px; */
   z-index: 100; /* Untuk memastikan elemen tetap di atas elemen-elemen lain */
